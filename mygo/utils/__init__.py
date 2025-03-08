@@ -1,3 +1,3 @@
 from .training_args import TrainingArguments
-
-__all__ = ["TrainingArguments"]
+from .distributed import init_process_group
+__all__ = ["TrainingArguments", "init_process_group"]

@@ -1,3 +1,4 @@
-from .trainer import  DistributedTrainer
+from .distributed_trainer import  DistributedTrainer
 from .base_trainer import BaseTrainer
-__all__ = ["BaseTrainer", "DistributedTrainer"]
+from .single_trainer import SingleTrainer
+__all__ = ["BaseTrainer", "DistributedTrainer", "SingleTrainer"]
