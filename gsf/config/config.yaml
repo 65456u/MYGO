@@ -1,0 +1,24 @@
+framework_name: "GNN Sampling System"
+version: "1.0"
+
+data_loader:
+  module_name: "EdgeListLoader"
+  data_path: "data/example_graph.edgelist"  # 修改为示例数据路径
+  feature_path: "data/example_features.npy" # 修改为示例特征路径
+  data_format: "edgelist"
+  feature_normalize: true
+  feature_dtype: "float32"
+
+sampler:
+  module_name: "RandomNodeSampler"
+  algorithm_name: "random_node"
+  num_sampled_nodes: 2 # 采样少量节点，方便观察结果
+
+subgraph_output:
+  module_name: "DGLGraphOutput"
+  output_format: "dgl_graph"
+  output_path: "output/sampled_subgraph.dgl" # 修改为 output 目录下的路径 (需要创建 output 目录)
+
+evaluator:
+  module_name: "TopologyEvaluator"
+  metrics: ["sampling_time", "degree_distribution_similarity"]

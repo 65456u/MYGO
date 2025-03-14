@@ -1,0 +1,9 @@
+{
+    "sampler": "RandomWalkSampler",
+    "sampler_params": {
+        "start_nodes": [0, 1],
+        "walk_length": 5
+    },
+    "output": "dgl",
+    "distributed": false
+}
